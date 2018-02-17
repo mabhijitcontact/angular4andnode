@@ -1,9 +1,11 @@
-<h1> My Mongo DB is working</h1>
+<h1> Books </h1>
 
 <div class="container">
-    <div class="row" *ngFor="let book of books">
-      <div class=" col-lg-3">{{ book.title}}</div>
-      <div class=" col-lg-3">{{ book.genre}}</div>
+    <div class="row" *ngFor="let book of books" style="border-bottom: 1px solid #CCC; margin: 5px">
+      <div class=" col-lg-3">
+        {{ book.title}}
+      </div>
+      <div class=" col-lg-3">{{ book.image_url}}</div>
       <div class=" col-lg-3">{{ book.author}}</div>
       <div class=" col-lg-3">{{ book.description }}</div>
     </div>

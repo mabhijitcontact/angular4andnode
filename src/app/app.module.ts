@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, HostListener } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -23,6 +23,7 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard],
     component: AddEditBookComponent },
   { path: 'login',      component: LoginComponent },
+  { path: 'register',      component: RegisterComponent },
   { path: '',           redirectTo: 'books', pathMatch: 'full' }
 ];
 
@@ -52,7 +53,11 @@ const appRoutes: Routes = [
 })
 export class AppModule { 
   constructor () {
-    window.localStorage.removeItem('localStorageUserID');
-    window.localStorage.removeItem('localStorageUserName');
   }
+
+  @HostListener('window:beforeunload', ['$event'])
+     public beforeunloadHandler($event) {
+      window.localStorage.removeItem('localStorageUserID');
+      window.localStorage.removeItem('localStorageUserName');
+    }
 }

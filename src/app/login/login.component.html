@@ -1,4 +1,4 @@
-<h2 class="page-header">Account Login</h2>
+<!-- <h2 class="page-header">Account Login</h2>
 <form #f="ngForm" (ngSubmit)="submitLogin(f)">
   <div class="form-group">
     <label>Username</label>
@@ -9,4 +9,57 @@
     <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password">
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
-</form>
+</form> -->
+
+<p class="tip">Click on button in image container</p>
+<div class="cont">
+    <form #f="ngForm" (ngSubmit)="submitLogin(f)">
+      <div class="form sign-in">
+        <h2>Welcome back,</h2>
+        <label>
+          <span>Username</span>
+          <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Username">
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password">
+        </label>
+        <p class="forgot-pass">Forgot password?</p>
+        <button type="submit" class="submit">Sign In</button>
+        <button type="button" class="fb-btn">Connect with <span>facebook</span></button>
+      </div>
+    </form>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>New here?</h2>
+        <p>Sign up and discover great amount of new opportunities!</p>
+      </div>
+      <div class="img__text m--in">
+        <h2>One of us?</h2>
+        <p>If you already has an account, just sign in. We've missed you!</p>
+      </div>
+      <div class="img__btn">
+        <span class="m--up">Sign Up</span>
+        <span class="m--in">Sign In</span>
+      </div>
+    </div>
+    <div class="form sign-up">
+      <h2>Time to feel like home,</h2>
+      <label>
+        <span>Name</span>
+        <input type="text" />
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" />
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" />
+      </label>
+      <button type="button" class="submit">Sign Up</button>
+      <button type="button" class="fb-btn">Join with <span>facebook</span></button>
+    </div>
+  </div>
+</div>

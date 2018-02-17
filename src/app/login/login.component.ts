@@ -28,7 +28,8 @@ export class LoginComponent implements OnInit {
       res => {
         window.localStorage.setItem('localStorageUserID', res.user._id);
         window.localStorage.setItem('localStorageUserName', res.user.username);
-        this._router.navigateByUrl(this.returnUrl+'?id='+res.user._id);
+        window.localStorage.setItem('isLoggedin', res.isLoggedIn);
+        this._router.navigateByUrl(this.returnUrl);
       },
       error => {
         // login failed so display error

@@ -35,24 +35,26 @@ authRouter.post('/register', function(req, res) {
 	var email = req.body.email;
 	var username = req.body.username;
 	var password = req.body.password;
-	var password2 = req.body.password2;
 
-	if(errors){
-		res.send('error');
-	} else {
-		var newUser = new User({
-			name: name,
-			email:email,
-			username: username,
-			password: password
-		});
+	User.getUserByUsername(username, function(err, userObj){
+		if(err) throw err;
+		if(userObj){
+			res.send(200, {message: "User Exists"});
+		}
+	});
 
-		User.createUser(newUser, function(err, user){
-			if(err) throw err;
-			console.log(user);
-		});
-		res.send('success');
-	}
+	var newUser = new User({
+		name: name,
+		email:email,
+		username: username,
+		password: password
+	});
+
+	User.createUser(newUser, function(err, user){
+		if(err) throw err;
+		res.send({message: 'success'});
+	});
+	
 });
 
 module.exports = authRouter;
