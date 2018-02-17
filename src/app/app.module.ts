@@ -5,7 +5,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookDataService } from './book-data.service';
 import { UserAuthService } from './user-auth.service';
 import {AuthGuard} from './auth.guard';
@@ -16,6 +16,7 @@ import { BookComponent } from './book/book.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AddEditBookComponent } from './add-edit-book/add-edit-book.component';
+import { FieldErrorDisplayComponent } from './field-error-display/field-error-display.component';
 
 const appRoutes: Routes = [
   { path: 'books',      component: BookComponent },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     BookComponent,
     LoginComponent,
     RegisterComponent,
-    AddEditBookComponent
+    AddEditBookComponent,
+    FieldErrorDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ const appRoutes: Routes = [
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     HttpModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [BookDataService, AuthGuard, UserAuthService],
   bootstrap: [AppComponent]
