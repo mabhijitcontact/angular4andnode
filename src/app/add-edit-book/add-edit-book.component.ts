@@ -13,10 +13,10 @@ export class AddEditBookComponent implements OnInit {
   book: any = {};
 
   bookModel: any = {
-		title: "Please Add",
-		description: "Please Add description",
-		author: "Please Add author",
-		image_url: "Please Add image url",
+		title: "Book Title",
+		description: "Book description",
+		author: "author",
+		image_url: "image url",
 		courses: {
       title: "Please Add course title",
       description: "Please Add course desc"
