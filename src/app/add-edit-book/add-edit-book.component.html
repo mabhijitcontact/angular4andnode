@@ -22,11 +22,16 @@
               <input type="text" class="form-control" [(ngModel)]="bookModel.author" name="author" placeholder="Author">
             </div>
             <div class="form-group">
-              <div class="col-lg-12"> Courses 
+              <div class="col-lg-12"> 
+                  <div class="headerClass">Courses</div> 
                   <div ngModelGroup="courses" #nameCtrl="ngModelGroup">
+                    <div class="col-lg-12">
                       Title: <input name="title" [(ngModel)]="bookModel.courses.title" name="title" required>
+                    </div>
+                    <div class="col-lg-12">
                       Description:
                       <textarea class="form-control" [(ngModel)]="bookModel.courses.description" name="description" placeholder="Description"></textarea>
+                    </div>
                   </div> 
               </div>
             </div>
